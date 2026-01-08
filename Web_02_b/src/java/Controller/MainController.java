@@ -36,14 +36,47 @@ public class MainController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MainController</title>");            
+            out.println("<title>Servlet MainController</title>");
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body>"); 
+
             String txtA = request.getParameter("txtA");
             String txtB = request.getParameter("txtB");
-            double a = Double.parseDouble(txtA);
-            double b = Double.parseDouble(txtB);
-            out.println(a + " + " + b + " = " + "<b>" + (a+b) +"</b>");
+            String txtOp = request.getParameter("txtOp");
+            double a = 0;
+            double b = 0;
+            double result = 0;
+            boolean checkError = false;
+            
+            try {
+                a = Double.parseDouble(txtA);
+                b = Double.parseDouble(txtB);
+                switch (txtOp) {
+                    case "+":
+                        result = a + b;
+                        break;
+                    case "-":
+                        result = a - b;
+                        break;
+                    case "*":
+                        result = a * b;
+                        break;
+                    case "/":
+                        result = a / b;
+                        break;
+                    default:
+                        result = 0;
+                }
+            } catch (Exception e) {
+                checkError = true;
+            }
+
+            if (!checkError) {
+                out.println(a + " " + txtOp + " " + b + " = <b>" + result + "</b>");
+            } else {
+                out.println("Xay ra loi trong qua trinh xu ly!");
+            }
+
             out.println("</body>");
             out.println("</html>");
         }

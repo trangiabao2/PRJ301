@@ -11,8 +11,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
         <form action="MainController" method="get">
-            a: <input type="text" name="txtA"> <br/>
-            b: <input type="text" name="txtB"> <br/>
+            a: <input type="text" name="txtA"><br/>
+            b: <input type="text" name="txtB"><br/>
+            
+            <select name="txtOp">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
             <input type="submit" name="Submit">
         </form>
     </body>
