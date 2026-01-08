@@ -6,6 +6,7 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,42 +41,21 @@ public class MainController extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-            boolean checkError = false;
-            String txtA = request.getParameter("txtA");
-            String txtB = request.getParameter("txtB");
-            String txtOp = request.getParameter("txtOp");
-            double result = 0;
-            double a = 0;
-            double b = 0;
+            String txtUsername = request.getParameter("txtUsername");
+            String txtPassword = request.getParameter("txtPassword");
+
+            String url = "b.jsp";
 
             try {
-                a = Double.parseDouble(txtA);
-                b = Double.parseDouble(txtB);
-
-                switch (txtOp) {
-                    case "+":
-                        result = a + b;
-                        break;
-                    case "-":
-                        result = a - b;
-                        break;
-                    case "*":
-                        result = a * b;
-                        break;
-                    case "/":
-                        result = a / b;
-                        break;
-                    default:
-                        result = 0;
+                if (txtUsername.equalsIgnoreCase("admin")
+                        && txtPassword.equals("admin")) {
+                    url = "a.jsp";
                 }
             } catch (Exception e) {
-                checkError = true;
-            }
-
-            if (!checkError) {
-                out.println(a + txtOp + b + " = <b>" + result + "</b>");
-            } else {
-                out.println("Xay ra loi trong qua trinh xu ly!");
+                log("Error at MainController: " + e.toString());
+            } finally {
+                // 3. Chuyen trang - Chi dung duy nhat 1 lan o cuoi
+                request.getRequestDispatcher(url).forward(request, response);
             }
 
             out.println("</body>");
