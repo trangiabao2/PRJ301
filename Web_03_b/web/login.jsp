@@ -29,6 +29,11 @@
 
                 <input type="submit" value="Login">
             </form>
+            <%
+                String message = request.getAttribute("message")+""; // ep chuoi
+                message = (message.equals("null"))?"":message;
+            %>
+            <span style="color:red"> <%=message%></span>
         </div>
     </body>
 </html>
