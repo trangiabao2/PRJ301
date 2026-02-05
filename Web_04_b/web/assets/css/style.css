@@ -1,0 +1,97 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.btn-access:hover {
+    background: #0099cc;
+    transform: translateY(-3px); /* Hiệu ứng bay lên khi di chuột */
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4); /* Đổ bóng phát sáng */
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /*Màu tối công nghệ */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ hiện đại */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #00d2ff;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+input[type="submit"], button {
+    width: 100%;
+    padding: 12px;
+    background: #00d2ff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #0099cc;
+    transform: translateY(-2px);
+}
+
+.error-msg {
+    color: #ff4d4d;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #00d2ff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}

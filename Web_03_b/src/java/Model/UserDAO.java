@@ -14,9 +14,9 @@ public class UserDAO { // Danh sach nguoi dung
 
     public UserDTO searchById(String username) {
         try {
-            Connection conn = DbUtils.getConnection();
+            Connection conn = DbUtils.getConnection(); // Thêm
             String sql = "SELECT * FROM tblUsers "
-                    + " WHERE userID='" + username + "'";
+                    + " WHERE userID='" + username + "'"; // Thêm
             System.out.println(sql);
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);

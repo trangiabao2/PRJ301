@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "vscjava.vscode-tomcat",
+    "formulahendry.ant",
+    "ms-mssql.mssql"
+  ]
+}

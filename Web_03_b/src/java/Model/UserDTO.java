@@ -57,5 +57,5 @@ public class UserDTO { // Noi tao nguoi dung
     public void setStatus(boolean status) {
         this.status = status;
     }
-    
+
 }

@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Ant: build",
+      "type": "shell",
+      "command": "ant",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy to Tomcat",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\deploy-wars.ps1",
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Tomcat",
+      "type": "shell",
+      "command": "cmd /c \"%CATALINA_HOME%\\bin\\startup.bat\"",
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "Stop Tomcat",
+      "type": "shell",
+      "command": "cmd /c \"%CATALINA_HOME%\\bin\\shutdown.bat\"",
+      "group": "none",
+      "problemMatcher": []
+    }
+  ]
+}
